@@ -2,7 +2,7 @@
 
 ESP32-Powered Wireless 3D Air Mouse
 
-## Project Demonstratio
+## Project Demonstration
 
 Watch the project demonstration on LinkedIn:
 
