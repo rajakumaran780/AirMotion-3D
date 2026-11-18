@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AirMotion 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <header>
+    <div class="brand">AIRMOTION <span>3D</span></div>
+    <div class="status">
+      <div class="pill bad" id="conn"><i></i><b>DISCONNECTED</b></div>
+      <div class="pill" id="mode"><b>MOUSE MODE</b></div>
+      <div class="pill" id="touch"><i></i><b>TOUCH</b></div>
+    </div>
+  </header>
+
+  <aside class="panel left">
+    <h3>TELEMETRY</h3>
+    <div class="row"><span>Pitch</span><b id="v-pitch">0.0&deg;</b></div>
+    <div class="row"><span>Roll</span><b id="v-roll">0.0&deg;</b></div>
+    <div class="row"><span>Yaw (relative)</span><b id="v-yaw">0.0&deg;</b></div>
+    <div class="row"><span>Gyro X</span><b id="v-gx">0.0</b></div>
+    <div class="row"><span>Gyro Z</span><b id="v-gz">0.0</b></div>
+    <div class="row"><span>Link rate</span><b id="v-rate">0 Hz</b></div>
+    <h3>SELECTED</h3>
+    <div class="row"><span>Object</span><b id="v-sel">CUBE</b></div>
+    <div class="row"><span>Last gesture</span><b id="v-gesture">-</b></div>
+  </aside>
+
+  <aside class="panel right">
+    <h3>CONTROLS</h3>
+    <label>Object rotation speed <b id="l-obj">1.5x</b></label>
+    <input type="range" id="objGain" min="0.2" max="4" step="0.1" value="1.5">
+    <label>Environment rotation speed <b id="l-env">1.0x</b></label>
+    <input type="range" id="envGain" min="0.2" max="4" step="0.1" value="1.0">
+    <label>Dead zone <b id="l-dz">5 deg/s</b></label>
+    <input type="range" id="dz" min="0" max="15" step="1" value="5">
+    <button id="btn-center">Re-center sensor</button>
+    <button id="btn-reset" class="secondary">Reset 3D view</button>
+  </aside>
+
+  <div class="mini"><span>DEVICE ORIENTATION</span></div>
+  <div class="hint" id="hint"></div>
+
+  <script src="three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
